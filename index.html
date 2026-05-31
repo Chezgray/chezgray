@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chéz Gray — A Home Away From Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo">Chéz Gray</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#rules">House Rules</a>
+        <a href="#charities">Charities</a>
+        <a href="#book">Book a Stay</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#about" onclick="closeMobileNav()">About</a>
+      <a href="#amenities" onclick="closeMobileNav()">Amenities</a>
+      <a href="#rules" onclick="closeMobileNav()">House Rules</a>
+      <a href="#charities" onclick="closeMobileNav()">Charities</a>
+      <a href="#book" onclick="closeMobileNav()">Book a Stay</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="top" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Welcome to</p>
+      <h1 class="hero-title">Chéz Gray</h1>
+      <p class="hero-sub">A private guest suite offered with love — and a hope you'll pay it forward.</p>
+      <div class="hero-actions">
+        <a href="#book" class="btn-primary">Check Availability</a>
+        <a href="#about" class="btn-ghost">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section id="gallery" class="gallery-section">
+    <div class="gallery-grid">
+      <div class="gallery-item large">
+        <img src="images/suite-main.jpg" alt="Guest suite main view" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="placeholder-inner">
+          <span>Main Suite</span>
+          <small>Add your photo: images/suite-main.jpg</small>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/bedroom.jpg" alt="Bedroom" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="placeholder-inner"><span>Bedroom</span><small>images/bedroom.jpg</small></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/bathroom.jpg" alt="Bathroom" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="placeholder-inner"><span>Bathroom</span><small>images/bathroom.jpg</small></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/living.jpg" alt="Living area" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="placeholder-inner"><span>Living Area</span><small>images/living.jpg</small></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/detail.jpg" alt="Suite detail" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="placeholder-inner"><span>Detail</span><small>images/detail.jpg</small></div>
+      </div>
+    </div>
+    <p class="gallery-hint">Click any photo to enlarge</p>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- ABOUT / DESCRIPTION -->
+  <section id="about" class="about-section">
+    <div class="container two-col">
+      <div class="about-text">
+        <p class="section-label">The Suite</p>
+        <h2>A place to rest,<br><em>a reason to give.</em></h2>
+        <p>We've opened our downstairs guest suite to friends and family who need a comfortable place to stay. It's our way of sharing what we've been given — and we ask only one thing in return: a small donation to one of the causes close to our hearts.</p>
+        <p>The suite is fully private with its own entrance, and is designed to feel like a real home — not a hotel. You'll have everything you need for a restful stay.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num">1</span>
+            <span class="stat-label">Bedroom</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">1</span>
+            <span class="stat-label">Bathroom</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Guests</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">Free</span>
+            <span class="stat-label">Just donate</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="images/suite-about.jpg" alt="Suite interior" onerror="this.classList.add('img-placeholder')">
+        <div class="about-tag">Private entrance · Quiet street</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section id="amenities" class="amenities-section">
+    <div class="container">
+      <p class="section-label">What's Included</p>
+      <h2>Everything you need</h2>
+      <div class="amenities-grid">
+        <div class="amenity-item">
+          <div class="amenity-icon">🛏</div>
+          <span>Queen bed with fresh linens</span>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🚿</div>
+          <span>Private bathroom with towels</span>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">📶</div>
+          <span>High-speed Wi-Fi</span>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">☕</div>
+          <span>Coffee &amp; tea station</span>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">❄️</div>
+          <span>Mini fridge &amp; microwave</span>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">📺</div>
+          <span>Smart TV with streaming</span>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🚗</div>
+          <span>Free off-street parking</span>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🔑</div>
+          <span>Private entrance &amp; key</span>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🌿</div>
+          <span>Quiet, residential setting</span>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🧴</div>
+          <span>Toiletries provided</span>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🍳</div>
+          <span>Shared kitchen access</span>
+        </div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🐾</div>
+          <span>Pet-friendly (ask first)</span>
+        </div>
+      </div>
+      <p class="amenities-note">Don't see something you need? Just ask — we're happy to help make your stay perfect.</p>
+    </div>
+  </section>
+
+  <!-- HOUSE RULES -->
+  <section id="rules" class="rules-section">
+    <div class="container">
+      <div class="rules-inner">
+        <div class="rules-header">
+          <p class="section-label light">Our Home</p>
+          <h2>House Rules</h2>
+          <p class="rules-intro">We want you to feel at home — and we want our home to stay a welcoming place for every guest who comes after you.</p>
+        </div>
+        <div class="rules-grid">
+          <div class="rule-card">
+            <div class="rule-num">01</div>
+            <h3>Check-in &amp; Check-out</h3>
+            <p>Check-in is after 3 PM, check-out by 11 AM. Early or late arrangements welcome — just let us know in advance.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-num">02</div>
+            <h3>Guests</h3>
+            <p>The suite sleeps up to 2 guests. Please don't bring additional overnight visitors without checking with us first.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-num">03</div>
+            <h3>Quiet Hours</h3>
+            <p>Please keep noise to a minimum between 10 PM and 8 AM. We're a residential home with neighbours nearby.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-num">04</div>
+            <h3>No Smoking</h3>
+            <p>No smoking anywhere on the property, including outside. We appreciate your understanding.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-num">05</div>
+            <h3>Leave It as You Found It</h3>
+            <p>Please tidy up before you leave — dishes washed, towels left in the bathroom, rubbish in the bin.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-num">06</div>
+            <h3>The Donation</h3>
+            <p>We ask guests to make a small donation to one of our supported charities. Any amount is meaningful and deeply appreciated.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARITIES -->
+  <section id="charities" class="charities-section">
+    <div class="container">
+      <p class="section-label">Pay It Forward</p>
+      <h2>Causes we care about</h2>
+      <p class="charities-intro">Instead of a nightly rate, we ask that you make a donation to one (or more!) of the organizations below. These are causes we believe in deeply — we hope you'll take a moment to learn about each one.</p>
+      <div class="charities-grid">
+
+        <a href="https://www.healthinharmony.org/" target="_blank" rel="noopener" class="charity-card">
+          <div class="charity-tag">Climate &amp; Health</div>
+          <h3>Health In Harmony</h3>
+          <p>A community-led climate solution supporting protection of tropical rainforests by linking human health and planetary health in Indonesia, Madagascar, and Brazil.</p>
+          <span class="charity-link">Donate →</span>
+        </a>
+
+        <a href="https://dofdmenno.org/" target="_blank" rel="noopener" class="charity-card">
+          <div class="charity-tag">Indigenous Justice</div>
+          <h3>Coalition to Dismantle the Doctrine of Discovery</h3>
+          <p>Calling on the Christian Church to address harms done in the name of Christ on Indigenous lands, and supporting Indigenous self-determination and earth protection.</p>
+          <span class="charity-link">Donate →</span>
+        </a>
+
+        <a href="https://www.reconciliasian.org/" target="_blank" rel="noopener" class="charity-card">
+          <div class="charity-tag">Racial Reconciliation</div>
+          <h3>ReconciliAsian</h3>
+          <p>Building bridges between Asian American communities and other communities of color, working toward racial healing and justice through education and relationship.</p>
+          <span class="charity-link">Donate →</span>
+        </a>
+
+        <a href="https://mcc.org/" target="_blank" rel="noopener" class="charity-card">
+          <div class="charity-tag">Global Relief</div>
+          <h3>Mennonite Central Committee</h3>
+          <p>Relief, development and peace in the name of Christ — serving vulnerable communities in over 50 countries through disaster response, food security, and peacebuilding.</p>
+          <span class="charity-link">Donate →</span>
+        </a>
+
+        <a href="https://eji.org/" target="_blank" rel="noopener" class="charity-card">
+          <div class="charity-tag">Criminal Justice</div>
+          <h3>Equal Justice Initiative</h3>
+          <p>Working to end mass incarceration, excessive punishment, and racial inequality through legal representation, research, education, and the National Memorial for Peace and Justice.</p>
+          <span class="charity-link">Donate →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDAR + BOOKING -->
+  <section id="book" class="book-section">
+    <div class="container">
+      <p class="section-label">Plan Your Stay</p>
+      <h2>Check availability &amp; request a booking</h2>
+      <p class="book-intro">Browse the calendar to find open dates, then fill out the form below. We'll confirm your stay by email, usually within 24 hours.</p>
+
+      <div class="book-layout">
+
+        <!-- Calendar -->
+        <div class="calendar-wrap">
+          <div class="calendar-header">
+            <button id="prevMonth" onclick="changeMonth(-1)" aria-label="Previous month">&#8592;</button>
+            <span id="calMonthLabel"></span>
+            <button id="nextMonth" onclick="changeMonth(1)" aria-label="Next month">&#8594;</button>
+          </div>
+          <div class="calendar-grid" id="calGrid"></div>
+          <div class="cal-legend">
+            <span class="legend-item"><span class="dot available"></span>Available</span>
+            <span class="legend-item"><span class="dot booked"></span>Booked</span>
+            <span class="legend-item"><span class="dot past"></span>Past / Unavailable</span>
+          </div>
+          <p class="cal-note">To update availability, edit the <code>dates.js</code> file. See <code>README.md</code> for instructions.</p>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="form-wrap">
+          <form id="bookingForm" action="https://app.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
+            <input type="hidden" name="subject" value="New Booking Request — Chéz Gray">
+            <input type="hidden" name="redirect" value="">
+            <input type="checkbox" name="botcheck" style="display:none">
+
+            <div class="form-group">
+              <label for="fname">Your name</label>
+              <input type="text" id="fname" name="name" placeholder="First &amp; last name" required>
+            </div>
+            <div class="form-group">
+              <label for="femail">Email address</label>
+              <input type="email" id="femail" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fcheckin">Check-in date</label>
+                <input type="date" id="fcheckin" name="checkin" required>
+              </div>
+              <div class="form-group">
+                <label for="fcheckout">Check-out date</label>
+                <input type="date" id="fcheckout" name="checkout" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fguests">Number of guests</label>
+              <select id="fguests" name="guests">
+                <option value="1">1 guest</option>
+                <option value="2" selected>2 guests</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fmessage">Message (optional)</label>
+              <textarea id="fmessage" name="message" rows="3" placeholder="Tell us a little about your visit…"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="fcharity">Charity you plan to donate to</label>
+              <select id="fcharity" name="charity">
+                <option value="">— Select one —</option>
+                <option>Health In Harmony</option>
+                <option>Coalition to Dismantle the Doctrine of Discovery</option>
+                <option>ReconciliAsian</option>
+                <option>Mennonite Central Committee</option>
+                <option>Equal Justice Initiative</option>
+                <option>I'll choose after my stay</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-submit">Send Booking Request</button>
+            <p class="form-note">This is a request, not an instant booking. We'll confirm by email within 24 hours. Please check the calendar above before submitting.</p>
+          </form>
+          <div id="formSuccess" class="form-success" style="display:none">
+            <div class="success-icon">✓</div>
+            <h3>Request sent!</h3>
+            <p>Thank you — we'll be in touch within 24 hours to confirm your stay at Chéz Gray.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Chéz Gray</span>
+        <p>A private guest suite offered with love. We ask only that you give back to causes that matter.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#rules">House Rules</a>
+        <a href="#charities">Charities</a>
+        <a href="#book">Book</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Chéz Gray · Shared with love · Powered by <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></p>
+    </div>
+  </footer>
+
+  <script src="dates.js"></script>
+  <script src="calendar.js"></script>
+  <script>
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Mobile nav
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navMobile').classList.toggle('open');
+    });
+    function closeMobileNav() {
+      document.getElementById('navMobile').classList.remove('open');
+    }
+
+    // Lightbox
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        document.getElementById('lightbox-img').src = img.src;
+        document.getElementById('lightbox').classList.add('open');
+      });
+    });
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+
+    // Form submission
+    document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type=submit]');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      try {
+        const res = await fetch(this.action, {
+          method: 'POST',
+          body: new FormData(this),
+          headers: { 'Accept': 'application/json' }
+        });
+        const data = await res.json();
+        if (data.success) {
+          document.getElementById('bookingForm').style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'flex';
+        } else {
+          btn.textContent = 'Send Booking Request';
+          btn.disabled = false;
+          alert('Something went wrong. Please try again or reach out directly.');
+        }
+      } catch {
+        btn.textContent = 'Send Booking Request';
+        btn.disabled = false;
+        alert('Network error. Please try again.');
+      }
+    });
+
+    // Intersection observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.amenity-item, .rule-card, .charity-card, .stat').forEach(el => {
+      el.classList.add('fade-up');
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
